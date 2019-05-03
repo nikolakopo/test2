@@ -1,0 +1,148 @@
+﻿@model IEnumerable<CozySmart.Models.elements>
+
+@{
+    ViewBag.Title = "Accommodation_location";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Available Accommodations</h2>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            Location
+        </th>
+        <th>
+            Title
+        </th>
+
+        <th>
+            Address
+        </th>
+
+        <th>
+            Description
+        </th>
+
+        <th>
+            Rooms
+        </th>
+
+        <th>
+            Baths
+        </th>
+
+        <th>
+            Price
+        </th>
+        <th>
+            Arrival
+        </th>
+        <th>
+           Departure
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <th>
+                @Html.DisplayFor(modelItem => item.Accommodation_Location)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Accommodation_title)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Accommodation_Adress)
+            </th>
+
+
+            <th>
+                @Html.DisplayFor(modelItem => item.Accommodation_Description)
+            </th>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Accommodation_Rooms)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Accommodation_Baths)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Accommodation_Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Arrival)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departure)
+            </td>
+            <td>
+
+
+                @Html.ActionLink("Book", "Book", item)
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
+@*
+
+    @using (Html.BeginForm("Book","SearchAccommodation"))
+    {
+        @Html.AntiForgeryToken()
+
+
+
+
+        foreach (var item in Model)
+        {
+
+                <div class="form-horizontal">
+
+
+
+                        @Html.DisplayFor(modelItem => item.Accommodation.Title)
+
+
+                        @Html.DisplayFor(modelItem => item.Arrival)
+
+
+                        @Html.DisplayFor(modelItem => item.Departure)
+
+
+
+
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Book" class="btn btn-default" />
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+        }
+
+    }
+
+       @Html.DisplayNameFor(model => model.Departure)
+
+*@        
